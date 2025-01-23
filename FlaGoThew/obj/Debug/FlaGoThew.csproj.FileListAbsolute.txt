@@ -2,3 +2,13 @@ C:\Users\lamar\Desktop\Ecole\Projet C#\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.c
 C:\Users\lamar\Desktop\Ecole\Projet C#\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.Properties.Resources.resources
 C:\Users\lamar\Desktop\Ecole\Projet C#\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.csproj.GenerateResource.cache
 C:\Users\lamar\Desktop\Ecole\Projet C#\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.csproj.CoreCompileInputs.cache
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\bin\Debug\FlaGoThew.exe.config
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\bin\Debug\FlaGoThew.exe
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\bin\Debug\FlaGoThew.pdb
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.csproj.AssemblyReference.cache
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.Login.resources
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.Properties.Resources.resources
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.csproj.GenerateResource.cache
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.csproj.CoreCompileInputs.cache
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.exe
+C:\Users\matthew.dettori\source\repos\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.pdb
