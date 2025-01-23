@@ -1,0 +1,4 @@
+C:\Users\lamar\Desktop\Ecole\Projet C#\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.csproj.AssemblyReference.cache
+C:\Users\lamar\Desktop\Ecole\Projet C#\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.Properties.Resources.resources
+C:\Users\lamar\Desktop\Ecole\Projet C#\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.csproj.GenerateResource.cache
+C:\Users\lamar\Desktop\Ecole\Projet C#\FlaGoThew\FlaGoThew\obj\Debug\FlaGoThew.csproj.CoreCompileInputs.cache
