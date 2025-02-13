@@ -11,7 +11,7 @@ namespace GestionTache.sql
 {
     public class SQLManager
     {
-        private const string connectionUrl = "server=localhost;Port=3306; database=listecourse;uid=root;pwd=\"\";";
+        private const string connectionUrl = "server=localhost;Port=3306; database=GestionTaches;uid=root;pwd=\"\";";
 
         
         public static MySqlDataReader query(string query)
