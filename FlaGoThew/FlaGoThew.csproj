@@ -110,11 +110,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Home.cs">
+    <Compile Include="model\task\Task.cs" />
+    <Compile Include="TaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="TaskForm.Designer.cs">
+      <DependentUpon>TaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>UserControl</SubType>
@@ -135,6 +136,7 @@
     <Compile Include="model\users\UserManager.cs" />
     <Compile Include="model\utils\HashUtil.cs" />
     <Compile Include="model\project\Project.cs" />
+    <Compile Include="model\task\TaskManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectForm.cs">
       <SubType>UserControl</SubType>
@@ -143,8 +145,8 @@
       <DependentUpon>ProjectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
