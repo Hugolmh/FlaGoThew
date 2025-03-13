@@ -58,6 +58,7 @@
             this.ListProject.RowTemplate.Height = 24;
             this.ListProject.Size = new System.Drawing.Size(941, 544);
             this.ListProject.TabIndex = 0;
+            this.ListProject.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListProject_CellContentClick);
             // 
             // label1
             // 
@@ -198,7 +199,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1349, 690);
             this.Controls.Add(this.ModifyTask);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Status);
@@ -215,7 +215,7 @@
             this.Controls.Add(this.ListProject);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ProjectForm";
-            this.Text = "Project";
+            this.Size = new System.Drawing.Size(1349, 690);
             ((System.ComponentModel.ISupportInitialize)(this.ListProject)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

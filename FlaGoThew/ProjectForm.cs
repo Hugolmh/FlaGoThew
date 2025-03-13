@@ -14,6 +14,9 @@ namespace FlaGoThew
             InitializeComponent();
             selectedProject = new Project();
             LoadProjects();
+
+            // Événement double clic
+            ListProject.CellDoubleClick += ListProject_CellDoubleClick;
         }
 
         private void LoadProjects()
@@ -33,7 +36,13 @@ namespace FlaGoThew
 
             foreach (var project in projects)
             {
-                ListProject.Rows.Add(project.Name, project.Description, project.CreationDate.ToShortDateString(), project.EndDate.ToShortDateString(), project.Status);
+                ListProject.Rows.Add(
+                    project.Name,
+                    project.Description,
+                    project.CreationDate.ToShortDateString(),
+                    project.EndDate.ToShortDateString(),
+                    project.Status
+                );
             }
         }
 
@@ -116,11 +125,10 @@ namespace FlaGoThew
             {
                 string oldProjectName = ListProject.SelectedRows[0].Cells[0].Value.ToString();
 
-                // Récupération des valeurs actuelles si l'utilisateur ne les modifie pas
                 string newProjectName = string.IsNullOrWhiteSpace(NameProject.Text) ? oldProjectName : NameProject.Text;
                 string newDescription = string.IsNullOrWhiteSpace(DescProject.Text) ? ListProject.SelectedRows[0].Cells[1].Value.ToString() : DescProject.Text;
                 DateTime newEndDate = dateTimeProject.Value;
-                string newStatus = string.IsNullOrWhiteSpace(Status.Text) ? ListProject.SelectedRows[0].Cells[4].Value.ToString() : Status.Text;
+                string newStatus = Status.Text;
 
                 if (ProjectManager.UpdateProject(oldProjectName, newProjectName, newDescription, newEndDate, newStatus))
                 {
@@ -138,5 +146,28 @@ namespace FlaGoThew
             }
         }
 
+        // Méthode corrigée pour gérer l'ouverture correcte de Home
+        private void ListProject_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string projectName = ListProject.Rows[e.RowIndex].Cells[0].Value.ToString();
+                OpenHomeForm(projectName);
+            }
+        }
+
+        // Méthode corrigée pour ouvrir la nouvelle Form (Home.cs)
+        private void OpenHomeForm(string projectName)
+        {
+            Home homeForm = new Home(); // Vérifie bien que Home() ne nécessite pas de paramètres !
+
+            homeForm.Show(); // ouvre simplement la nouvelle fenêtre
+            // ou homeForm.ShowDialog(); pour bloquer les autres fenêtres
+        }
+
+        // Supprimer ou laisse vide si inutilisé
+        private void ListProject_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
     }
 }
