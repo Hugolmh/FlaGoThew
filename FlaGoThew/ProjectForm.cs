@@ -26,17 +26,19 @@ namespace FlaGoThew
 
             if (ListProject.ColumnCount == 0)
             {
-                ListProject.ColumnCount = 5;
-                ListProject.Columns[0].Name = "Nom";
-                ListProject.Columns[1].Name = "Description";
-                ListProject.Columns[2].Name = "Date de création";
-                ListProject.Columns[3].Name = "Date de fin";
-                ListProject.Columns[4].Name = "Statut";
+                ListProject.ColumnCount = 6;
+                ListProject.Columns[0].Name = "Id";
+                ListProject.Columns[1].Name = "Nom";
+                ListProject.Columns[2].Name = "Description";
+                ListProject.Columns[3].Name = "Date de création";
+                ListProject.Columns[4].Name = "Date de fin";
+                ListProject.Columns[5].Name = "Statut";
             }
 
             foreach (var project in projects)
             {
                 ListProject.Rows.Add(
+                    project.Id,
                     project.Name,
                     project.Description,
                     project.CreationDate.ToShortDateString(),
@@ -50,11 +52,12 @@ namespace FlaGoThew
         {
             if (ListProject.SelectedRows.Count > 0)
             {
-                selectedProject.Name = ListProject.SelectedRows[0].Cells[0].Value.ToString();
-                selectedProject.Description = ListProject.SelectedRows[0].Cells[1].Value.ToString();
-                selectedProject.CreationDate = DateTime.Parse(ListProject.SelectedRows[0].Cells[2].Value.ToString());
-                selectedProject.EndDate = DateTime.Parse(ListProject.SelectedRows[0].Cells[3].Value.ToString());
-                selectedProject.Status = ListProject.SelectedRows[0].Cells[4].Value.ToString();
+                selectedProject.Id = Int32.Parse(ListProject.SelectedRows[0].Cells[0].Value.ToString());
+                selectedProject.Name = ListProject.SelectedRows[0].Cells[1].Value.ToString();
+                selectedProject.Description = ListProject.SelectedRows[0].Cells[2].Value.ToString();
+                selectedProject.CreationDate = DateTime.Parse(ListProject.SelectedRows[0].Cells[3].Value.ToString());
+                selectedProject.EndDate = DateTime.Parse(ListProject.SelectedRows[0].Cells[4].Value.ToString());
+                selectedProject.Status = ListProject.SelectedRows[0].Cells[5].Value.ToString();
 
                 NameProject.Text = selectedProject.Name;
                 DescProject.Text = selectedProject.Description;
@@ -102,7 +105,7 @@ namespace FlaGoThew
         {
             if (ListProject.SelectedRows.Count > 0)
             {
-                string projectName = ListProject.SelectedRows[0].Cells[0].Value.ToString();
+                string projectName = ListProject.SelectedRows[0].Cells[1].Value.ToString();
                 if (ProjectManager.DeleteProjectByName(projectName))
                 {
                     MessageBox.Show("Projet supprimé avec succès !");
@@ -123,10 +126,10 @@ namespace FlaGoThew
         {
             if (ListProject.SelectedRows.Count > 0)
             {
-                string oldProjectName = ListProject.SelectedRows[0].Cells[0].Value.ToString();
+                string oldProjectName = ListProject.SelectedRows[0].Cells[1].Value.ToString();
 
                 string newProjectName = string.IsNullOrWhiteSpace(NameProject.Text) ? oldProjectName : NameProject.Text;
-                string newDescription = string.IsNullOrWhiteSpace(DescProject.Text) ? ListProject.SelectedRows[0].Cells[1].Value.ToString() : DescProject.Text;
+                string newDescription = string.IsNullOrWhiteSpace(DescProject.Text) ? ListProject.SelectedRows[0].Cells[2].Value.ToString() : DescProject.Text;
                 DateTime newEndDate = dateTimeProject.Value;
                 string newStatus = Status.Text;
 
@@ -151,18 +154,17 @@ namespace FlaGoThew
         {
             if (e.RowIndex >= 0)
             {
-                string projectName = ListProject.Rows[e.RowIndex].Cells[0].Value.ToString();
-                OpenHomeForm(projectName);
+                int projectId = Int32.Parse(ListProject.Rows[e.RowIndex].Cells[0].Value.ToString());
+                OpenHomeForm(projectId);
             }
         }
 
         // Méthode corrigée pour ouvrir la nouvelle Form (Home.cs)
-        private void OpenHomeForm(string projectName)
+        private void OpenHomeForm(int projectId)
         {
-            Home homeForm = new Home(); // Vérifie bien que Home() ne nécessite pas de paramètres !
+            TaskForm taskForm = new TaskForm(projectId);
 
-            homeForm.Show(); // ouvre simplement la nouvelle fenêtre
-            // ou homeForm.ShowDialog(); pour bloquer les autres fenêtres
+            taskForm.Show();
         }
 
         // Supprimer ou laisse vide si inutilisé

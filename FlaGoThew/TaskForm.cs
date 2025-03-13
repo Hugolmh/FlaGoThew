@@ -1,4 +1,5 @@
-﻿using FlaGoThew.model.task;
+﻿using FlaGoThew.model.project;
+using FlaGoThew.model.task;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,13 @@ namespace FlaGoThew
 {
     public partial class TaskForm : Form
     {
-        private int idProject;
+        private Project project;
 
         public TaskForm(int idProject)
         {
-            this.idProject = idProject;
+            this.project = ProjectManager.GetProjectById(idProject);
             InitializeComponent();
+            this.NomProjet.Text = project.Name;
 
             MajDgv();
         }
@@ -38,7 +40,7 @@ namespace FlaGoThew
             DateTime dateEcheanceTask = DateEcheance.Value;
 
 
-            TaskManager.CreateTask(this.idProject, idUser, nameTask, descriptionTask,
+            TaskManager.CreateTask(this.project.Id, idUser, nameTask, descriptionTask,
                                 prioriteTask, dateEcheanceTask);
 
             MajDgv();
@@ -116,15 +118,15 @@ namespace FlaGoThew
 
         private void MajDgv()
         {
-            DataTable tasksTodo = TaskManager.GetTasks("toDo", idProject);
+            DataTable tasksTodo = TaskManager.GetTasks("toDo", this.project.Id);
             ToDo.DataSource = tasksTodo;
             ToDo.Columns[0].Visible = true;
 
-            DataTable tasksInProgress = TaskManager.GetTasks("inProgress", idProject);
+            DataTable tasksInProgress = TaskManager.GetTasks("inProgress", this.project.Id);
             InProgress.DataSource = tasksInProgress;
             InProgress.Columns[0].Visible = true;
 
-            DataTable done = TaskManager.GetTasks("done", idProject);
+            DataTable done = TaskManager.GetTasks("done", this.project.Id);
             Done.DataSource = done;
             Done.Columns[0].Visible = true;
         }

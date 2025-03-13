@@ -91,7 +91,7 @@ namespace FlaGoThew.model.project
         public static List<Project> GetAllProjects()
         {
             List<Project> projects = new List<Project>();
-            string query = "SELECT nom, description_projet, date_creation, date_fin, statut FROM projet";
+            string query = "SELECT id_projet, nom, description_projet, date_creation, date_fin, statut FROM projet";
 
             try
             {
@@ -104,6 +104,7 @@ namespace FlaGoThew.model.project
                     while (reader.Read())
                     {
                         Project project = new Project(
+                            reader.GetInt32("id_projet"),
                             reader.GetString("nom"),
                             reader.GetString("description_projet"),
                             reader.GetDateTime("date_creation"),
@@ -124,6 +125,44 @@ namespace FlaGoThew.model.project
             }
 
             return projects;
+        }
+
+        public static Project GetProjectById(int idProject)
+        {
+            string query = "SELECT id_projet, nom, description_projet, date_creation, date_fin, statut FROM projet WHERE id_projet = @id_projet";
+
+            try
+            {
+                return SQLManager.query<Project>((cnn) =>
+                {
+                    MySqlCommand cmd = cnn.CreateCommand();
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@id_projet", idProject);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        Project project = new Project(
+                            reader.GetInt32("id_projet"),
+                            reader.GetString("nom"),
+                            reader.GetString("description_projet"),
+                            reader.GetDateTime("date_creation"),
+                            reader.GetDateTime("date_fin"),
+                            reader.GetString("statut")
+                        );
+
+                        Console.WriteLine($"Projet trouvé en BDD : {project.Name}");
+                        return project;
+                    }
+                    return null;
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la récupération des projets : {ex.Message}");
+            }
+
+            return null;
         }
 
 
