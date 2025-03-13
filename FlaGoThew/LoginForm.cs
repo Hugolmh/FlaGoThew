@@ -12,10 +12,14 @@ using System.Windows.Forms;
 
 namespace FlaGoThew
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : UserControl
     {
-        public LoginForm()
+
+        private MainForm main;
+
+        public LoginForm(MainForm main)
         {
+            this.main = main;
             InitializeComponent();
         }
 
@@ -38,7 +42,8 @@ namespace FlaGoThew
                 return;
             }
 
-            FormUtil.SwapForm(this, new Project());
+            this.main.LoadPage(new Project());
+            //FormUtil.SwapForm(this, new Project());
 
         }
     }

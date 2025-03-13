@@ -42,15 +42,15 @@ namespace FlaGoThew.model.users
                 List<User> users = new List<User>();
                 while (r.Read())
                 {
-                    users.Add(r.GetInt32("id_utilisateur"), r.GetString("nom"), r.GetString("email"), null, Enum.Parse<RoleUser>(r.GetInt32("role"));
+                    users.Add(new User(r.GetInt32("id_utilisateur"), r.GetString("nom"), r.GetString("email"), null, (RoleUser)r.GetInt32("role")));
                 }
-                return r.HasRows;
+                return users;
             });
         }
 
         public static User getUser()
         {
-
+            return null;
         }
 
     }

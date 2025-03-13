@@ -117,20 +117,25 @@
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="model\SQLManager.cs" />
     <Compile Include="model\users\RoleUser.cs" />
     <Compile Include="model\users\User.cs" />
     <Compile Include="model\users\UserManager.cs" />
-    <Compile Include="model\utils\FormUtil.cs" />
     <Compile Include="model\utils\HashUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Project.Designer.cs">
       <DependentUpon>Project.cs</DependentUpon>
@@ -141,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Project.resx">
       <DependentUpon>Project.cs</DependentUpon>
