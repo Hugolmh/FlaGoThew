@@ -1,6 +1,6 @@
 ﻿namespace FlaGoThew
 {
-    partial class Project
+    partial class ProjectForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@
             this.DescProject = new System.Windows.Forms.TextBox();
             this.Status = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.ModifyTask = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ListProject)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +79,7 @@
             this.DeleteButton.TabIndex = 3;
             this.DeleteButton.Text = "Supprimer";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // NameProject
             // 
@@ -87,6 +89,7 @@
             this.NameProject.Name = "NameProject";
             this.NameProject.Size = new System.Drawing.Size(180, 36);
             this.NameProject.TabIndex = 13;
+            this.NameProject.TextChanged += new System.EventHandler(this.NameProject_TextChanged);
             // 
             // label5
             // 
@@ -108,6 +111,7 @@
             this.CreateButton.TabIndex = 15;
             this.CreateButton.Text = "Créer";
             this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // label2
             // 
@@ -118,7 +122,6 @@
             this.label2.Size = new System.Drawing.Size(59, 26);
             this.label2.TabIndex = 16;
             this.label2.Text = "Nom";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -137,7 +140,7 @@
             this.dateTimeProject.Name = "dateTimeProject";
             this.dateTimeProject.Size = new System.Drawing.Size(213, 22);
             this.dateTimeProject.TabIndex = 18;
-            this.dateTimeProject.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimeProject.ValueChanged += new System.EventHandler(this.dateTimeProject_ValueChanged);
             // 
             // label4
             // 
@@ -157,6 +160,7 @@
             this.DescProject.Name = "DescProject";
             this.DescProject.Size = new System.Drawing.Size(180, 36);
             this.DescProject.TabIndex = 19;
+            this.DescProject.TextChanged += new System.EventHandler(this.DescProject_TextChanged);
             // 
             // Status
             // 
@@ -166,6 +170,7 @@
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(180, 36);
             this.Status.TabIndex = 21;
+            this.Status.TextChanged += new System.EventHandler(this.Status_TextChanged);
             // 
             // label6
             // 
@@ -177,11 +182,24 @@
             this.label6.TabIndex = 22;
             this.label6.Text = "Statut";
             // 
-            // Project
+            // ModifyTask
+            // 
+            this.ModifyTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.ModifyTask.Location = new System.Drawing.Point(1092, 623);
+            this.ModifyTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ModifyTask.Name = "ModifyTask";
+            this.ModifyTask.Size = new System.Drawing.Size(180, 56);
+            this.ModifyTask.TabIndex = 23;
+            this.ModifyTask.Text = "Modifier";
+            this.ModifyTask.UseVisualStyleBackColor = true;
+            this.ModifyTask.Click += new System.EventHandler(this.ModifyTask_Click);
+            // 
+            // ProjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 690);
+            this.Controls.Add(this.ModifyTask);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Status);
             this.Controls.Add(this.label4);
@@ -196,7 +214,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ListProject);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Project";
+            this.Name = "ProjectForm";
             this.Text = "Project";
             ((System.ComponentModel.ISupportInitialize)(this.ListProject)).EndInit();
             this.ResumeLayout(false);
@@ -219,5 +237,6 @@
         private System.Windows.Forms.TextBox DescProject;
         private System.Windows.Forms.TextBox Status;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button ModifyTask;
     }
 }
