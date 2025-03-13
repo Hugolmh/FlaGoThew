@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GestionTache.sql
 {
@@ -72,6 +73,7 @@ namespace GestionTache.sql
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return default;
             }
             finally

@@ -44,3 +44,9 @@ CREATE TABLE Commentaire (
     id_tache INT NOT NULL,
     FOREIGN KEY (id_tache) REFERENCES Tache(id_tache) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+INSERT INTO Utilisateur (id_utilisateur, nom, email, motdepasse, role) VALUES(1, 'Jean Michel', 'jean.michel@gmail.com', '2dvX5d7w9Gk2SM', 1);
+INSERT INTO Utilisateur (id_utilisateur, nom, email, motdepasse, role) VALUES(2, 'Claude Francois', 'claude.francois@gmail.com', 'XvG2dkw7MS952d', 0);
+INSERT INTO Utilisateur (id_utilisateur, nom, email, motdepasse, role) VALUES(3, 'Hugo Tavernier', 'hugo.tavernier@orange.com', 'w5X2kd7M2GvdS9', 0);
+INSERT INTO Utilisateur (id_utilisateur, nom, email, motdepasse, role) VALUES(4, 'Flavio Dettori', 'flavio.dettori@gmail.com', 'S27vXMGk95w2dd', 0);
+INSERT INTO Utilisateur (id_utilisateur, nom, email, motdepasse, role) VALUES(5, 'Matthew LaMarche', 'matthew.lamarche@gmail.com', 'Gdv9dkS2X2M5w7', 0);
