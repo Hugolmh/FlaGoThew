@@ -42,7 +42,7 @@ namespace FlaGoThew
                 return;
             }
 
-            this.main.LoadPage(new Project());
+            this.main.LoadPage(new ProjectForm());
             //FormUtil.SwapForm(this, new Project());
 
         }

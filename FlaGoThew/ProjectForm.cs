@@ -5,7 +5,7 @@ using FlaGoThew.model.project;
 
 namespace FlaGoThew
 {
-    public partial class ProjectForm : Form
+    public partial class ProjectForm : UserControl
     {
         private Project selectedProject;
 

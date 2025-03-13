@@ -137,7 +137,7 @@
     <Compile Include="model\project\Project.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectForm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ProjectForm.Designer.cs">
       <DependentUpon>ProjectForm.cs</DependentUpon>
