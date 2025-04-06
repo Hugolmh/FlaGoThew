@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FlaGoThew
 {
-    public partial class Project : Form
+    public partial class Project : UserControl
     {
         public Project()
         {
